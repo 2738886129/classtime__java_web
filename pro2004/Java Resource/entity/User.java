@@ -40,10 +40,10 @@ public class User {
 	public void setUsex(String usex) {
 		this.usex = usex;
 	}
-	public int getUAge() {
+	public int getUage() {
 		return uage;
 	}
-	public void setUAge(int uage) {
+	public void setUage(int uage) {
 		this.uage = uage;
 	}
 	public String getUfavor() {
@@ -52,6 +52,5 @@ public class User {
 	public void setUfavor(String ufavor) {
 		this.ufavor = ufavor;
 	}
-	
 	
 }

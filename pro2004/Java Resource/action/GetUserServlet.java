@@ -55,7 +55,7 @@ public class GetUserServlet extends HttpServlet {
 				user.setUname(rs.getString("uname"));
 				user.setUpwd(rs.getString("upwd"));
 				user.setTruename(rs.getString("utruename"));
-				user.setUAge(rs.getInt("uage"));
+				user.setUage(rs.getInt("uage"));
 				user.setUsex(rs.getString("usex"));
 				user.setUfavor(rs.getString("ufavor"));
 				

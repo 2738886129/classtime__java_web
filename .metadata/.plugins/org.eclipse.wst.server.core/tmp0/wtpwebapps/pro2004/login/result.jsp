@@ -2,6 +2,7 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,28 +13,18 @@
 <%-- 	<label>姓名：</label><%=session.getAttribute("uname")%><br> --%>
 	<table>
 		<tr><th>用户名</th><th>姓名</th><th>性别</th><th>年龄</th><th>爱好</th></tr>
-		<%
-			List<User> ulist=(List<User>)session.getAttribute("users");
-			for(int i=0;i<ulist.size();i++)
-			{
-				User u=ulist.get(i);
-// 				out.write("<tr><td>"+u.getUname() +"</td><td>"+u.getTruename()
-// 						+"</td><td>"+u.getUsex() +"</td><td>"+u.getUAge() 
-// 						+"</td><td>"+u.getUfavor()+"</td></tr>");
-		%>	
-		<tr>
-			<td><%=u.getUname() %></td>
-			<td><%=u.getTruename() %></td>
-			<td><%=u.getUsex() %></td>
-			<td><%=u.getUAge() %></td>
-			<td><%=u.getUfavor() %></td>
-			<td><a href="../GetCurUser?id=<%=u.getId()%>">修改</a></td>
-<%-- 			<td><a href="../DelUser?id=<%=u.getId()%>">删除</a></td> --%>
-			<td><a href="javascript:preDel(<%=u.getId()%>)">删除</a></td>
-		</tr>
-			
-		<% 	}
-		%>
+		<c:forEach var="u" items="${users }">
+			<tr>
+				<td>${u.uname }</td>
+				<td>${u.truename }</td>
+				<td>${u.usex }</td>
+				<td>${u.uage }</td>
+				<td>${u.ufavor }</td>
+				<td><a href="../GetCurUser?id=${u.id }">修改</a></td>
+				<td><a href="javascript:preDel(${u.id })">删除</a></td>
+			</tr>
+		</c:forEach>
+		
 	</table>
 	
 	<script type="text/javascript">
