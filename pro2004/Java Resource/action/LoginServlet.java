@@ -11,6 +11,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class LoginServlet
@@ -60,8 +61,8 @@ public class LoginServlet extends HttpServlet {
 //		if("…–”Ó∫Ω".equals(name) && "1111".equals(passerword))
 		if (label)
 		{
-//			HttpSession session=request.getSession();
-//			session.setAttribute("uname",name);
+			HttpSession session=request.getSession();
+			session.setAttribute("uname",name);
 //			response.sendRedirect("login/result.jsp");
 			
 			response.sendRedirect("GetUserServlet");
